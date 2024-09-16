@@ -1,5 +1,4 @@
 import { studentWithGrades } from "../utils/db";
-import { removeDuplicates, findMax, reverseString, fetchData, findStudent, findAverage } from "./solution";
 
 test("reverses a string", () => {
   expect(reverseString("hello")).toBe("olleh");
