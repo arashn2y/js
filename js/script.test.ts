@@ -1,4 +1,5 @@
-import { studentWithGrades } from "../utils/db";
+import { students } from "../utils/db";
+import { removeDuplicates, findMax, reverseString, fetchData, findStudent, findAverageGradesForStudent } from "./script";
 
 test("reverses a string", () => {
   expect(reverseString("hello")).toBe("olleh");
@@ -13,17 +14,17 @@ test("finds the maximum number in an array", () => {
 });
 
 test("finds a student by id", () => {
-  expect(findStudent(studentWithGrades, 1)).toEqual(studentWithGrades[0]);
-  expect(findStudent(studentWithGrades, 2)).toEqual(studentWithGrades[1]);
-  expect(findStudent(studentWithGrades, 3)).toEqual(studentWithGrades[2]);
-  expect(findStudent(studentWithGrades, 4)).toBe(undefined);
+  expect(findStudent(students, 1)).toEqual(students[0]);
+  expect(findStudent(students, 2)).toEqual(students[1]);
+  expect(findStudent(students, 3)).toEqual(students[2]);
+  expect(findStudent(students, 4)).toBe(undefined);
 });
 
 test("finds the average of student grades", () => {
-  expect(findAverage(studentWithGrades, 1)).toBe(90);
-  expect(findAverage(studentWithGrades, 2)).toBe(85);
-  expect(findAverage(studentWithGrades, 3)).toBe("No grades found");
-  expect(findAverage(studentWithGrades, 4)).toBe("Student not found");
+  expect(findAverageGradesForStudent(students, 1)).toBe(90);
+  expect(findAverageGradesForStudent(students, 2)).toBe(85);
+  expect(findAverageGradesForStudent(students, 3)).toBe("No grades found");
+  expect(findAverageGradesForStudent(students, 4)).toBe("Student not found");
 });
 
 test("removes duplicates from an array", () => {

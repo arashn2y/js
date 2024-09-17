@@ -1,4 +1,4 @@
-export type studentWithGradesType = {
+export type studentType = {
   id: number;
   name: string;
   grades: number[];
