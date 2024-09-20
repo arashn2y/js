@@ -44,7 +44,7 @@ let ilmiovettore = [];
 let vettore2 = [
     23.23,
     234.90,
-    b * c,
+    b * c
 ]
 
 console.log(vettore2);
