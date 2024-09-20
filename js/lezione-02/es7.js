@@ -1,7 +1,6 @@
 /*
  * Esercizio 7
 Utilizzando un array, realizzare un piccolo anagrafe nomi-cognomi.  Il programma prenderà in input un array di ‘persone’ e lo restituirà in ordine alfabetico. Inoltre dovrà anche restituire delle statistiche di queste persone: 
-Contare quante volte un nome viene ripetuto
 Contare quante persone hanno lo stesso nome
 Contare quante persone hanno lo stesso cognome
 Determinare il nome più lungo
@@ -74,6 +73,21 @@ function countSurnameRep(surname, data) {
     return occurrencies.length;
 }
 
+/**
+ * Formatta un nuovo vettore con le stesse persone ma scritte con il formato 'cognome nome'
+ * @param {Array<string>} data Lista di tutte le persone
+ * @returns Un nuovo vettore con le persone ribaltate: 'cognome nome'
+ */
+function getReversed(data) {
+    return data.map(person => {
+        const tk = person.split(" ");
+        const name = tk[0];
+        const surname = tk[1];
+
+        return `${surname} ${name}`;
+    })
+}
+
 writeSorted(arrayData);
 // Vettore che contiene i nomi già analizzati
 let alreadyDoneNames = [];
@@ -96,3 +110,6 @@ for (const person of arrayData) {
         alreadyDoneSurnames.push(pSurname);
     }
 }
+
+console.log(`Le persone 'ribaltate' sono: ${getReversed(arrayData)}`);
+console.log(`Nell'elenco sono presenti ${arrayData.length} persone`);
