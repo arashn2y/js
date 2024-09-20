@@ -34,6 +34,27 @@ function area(base, altezza) {
     return base * altezza;
 }
 
-const area = area(baseRettangolo, altezzaRettangolo);
+const a = area(baseRettangolo, altezzaRettangolo);
 
-console.log("L'area del rettangolo è: " + area);
+let b = 24;
+let c = 23;
+console.log("L'area del rettangolo è: " + a);
+
+let ilmiovettore = [];
+let vettore2 = [
+    23.23,
+    234.90,
+    b * c,
+]
+
+console.log(vettore2);
+console.log(ilmiovettore.length);
+ilmiovettore.push(123);
+ilmiovettore.push(28);
+console.log(ilmiovettore.length);
+console.log(ilmiovettore);
+ilmiovettore.pop();
+
+console.log(ilmiovettore.length);
+console.log(ilmiovettore[0]);
+console.log(ilmiovettore);
