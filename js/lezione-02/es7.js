@@ -9,28 +9,7 @@ Scrivere il numero di persone nell’elenco
 Scrivere a console l’elenco, scambiando l’ordine: non più nome-cognome ma cognome nome
  */
 
-const arrayData = [
-    "Marco Rossi",
-  "Luca Bianchi",
-  "Sara Verdi",
-  "Giulia Rossi",
-  "Francesco Neri",
-  "Luca Verdi",
-  "Marco Bianchi",
-  "Elena Russo",
-  "Maria Neri",
-  "Giulia Russo",
-  "Francesco Verdi",
-  "Sara Bianchi",
-  "Luca Rossi",
-  "Marco Neri",
-  "Elena Rossi",
-  "Maria Bianchi",
-  "Giulia Verdi",
-  "Francesco Bianchi",
-  "Sara Russo",
-  "Elena Verdi"
-]
+import { arrayData } from './array.js';
 
 /**
  * Scrive i dati in forma ordinata
@@ -74,6 +53,59 @@ function countSurnameRep(surname, data) {
 }
 
 /**
+ * Cerca la persona con il nome più lungo nella lista
+ * @param {Array<string>} data Vettore con le persone
+ * @returns Una stringa contenente il nome più lungo
+ */
+function getLongestName(data) {
+    if (data.length === 0)
+        return undefined;
+
+    // Se c'è solo una persona restituisco il nome di quella persona, è sicuramente il più lungo
+    if(data.length == 1) {
+        return data[0].split(" ")[0];
+    }
+
+    let longestName = data[0].split(" ")[0];
+    // Scorro il vettore con le persone
+    for (const person of data) {
+        // Ottengo il nome della persona corrente
+        const pName = person.split(" ")[0];
+
+        if(longestName.length < pName.length) {
+            // Ho trovato un nuovo nome più lungo
+            longestName = pName;
+        }
+    }
+
+    return longestName;
+}
+
+function getLongestSurname(data) {
+    if (data.length === 0)
+        return undefined;
+
+    // Se c'è solo una persona restituisco il nome di quella persona, è sicuramente il più lungo
+    if(data.length == 1) {
+        return data[0].split(" ")[1];
+    }
+
+    let longestSurname = data[0].split(" ")[1];
+    // Scorro il vettore con le persone
+    for (const person of data) {
+        // Ottengo il nome della persona corrente
+        const pSurname = person.split(" ")[1];
+
+        if(longestSurname.length < pSurname.length) {
+            // Ho trovato un nuovo nome più lungo
+            longestSurname = pSurname;
+        }
+    }
+
+    return longestSurname;
+}
+
+/**
  * Formatta un nuovo vettore con le stesse persone ma scritte con il formato 'cognome nome'
  * @param {Array<string>} data Lista di tutte le persone
  * @returns Un nuovo vettore con le persone ribaltate: 'cognome nome'
@@ -113,3 +145,5 @@ for (const person of arrayData) {
 
 console.log(`Le persone 'ribaltate' sono: ${getReversed(arrayData)}`);
 console.log(`Nell'elenco sono presenti ${arrayData.length} persone`);
+console.log(`Il nome più lungo e': ${getLongestName(arrayData)}`);
+console.log(`Il cognome più lungo è: ${getLongestSurname(arrayData)}`);
