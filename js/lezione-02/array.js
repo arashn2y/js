@@ -1,3 +1,6 @@
+/**
+ * Array con i dati
+ */
 export const arrayData = [
     "Marco Rossi",
   "Luca Bianchi",

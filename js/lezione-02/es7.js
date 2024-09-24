@@ -1,12 +1,12 @@
 /*
- * Esercizio 7
-Utilizzando un array, realizzare un piccolo anagrafe nomi-cognomi.  Il programma prenderà in input un array di ‘persone’ e lo restituirà in ordine alfabetico. Inoltre dovrà anche restituire delle statistiche di queste persone: 
-Contare quante persone hanno lo stesso nome
-Contare quante persone hanno lo stesso cognome
-Determinare il nome più lungo
-Determinare il nome più corto
-Scrivere il numero di persone nell’elenco
-Scrivere a console l’elenco, scambiando l’ordine: non più nome-cognome ma cognome nome
+ *  Esercizio 7
+    Utilizzando un array, realizzare un piccolo anagrafe nomi-cognomi.  Il programma prenderà in input un array di ‘persone’ e lo restituirà in ordine alfabetico. Inoltre dovrà anche restituire delle statistiche di queste persone: 
+    Contare quante persone hanno lo stesso nome
+    Contare quante persone hanno lo stesso cognome
+    Determinare il nome più lungo
+    Determinare il nome più corto
+    Scrivere il numero di persone nell’elenco
+    Scrivere a console l’elenco, scambiando l’ordine: non più nome-cognome ma cognome nome
  */
 
 import { arrayData } from './array.js';
@@ -28,11 +28,15 @@ function writeSorted(data) {
  * @param {string} search_name Nome da cercare
  */
 function countNameRep(search_name, data) {
+    console.log(`\n\ncountNameRep chiamata con ${search_name}`);
     // Tolgo tutte le persone che non iniziano con quel nome
     const occurrencies = data.filter(p => {
+        console.log(`Valore di p: ${p}`);
         const pName = p.split(" ")[0];
+        console.log(pName);
         return pName === search_name;
     });
+    console.log(occurrencies);
         
     return occurrencies.length;
 }
