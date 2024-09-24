@@ -1,6 +1,5 @@
 /* { status: 'ok', method: 'GET' } */
 function loadUsers() {
-
     fetch('https://dummyjson.com/users')
 .then(res => res.json())
 .then((usersResponse => {
