@@ -8,6 +8,13 @@ const firstNames = arrayData.map((person) => {
     return person.split(" ")[0];
 });
 
+function <nome>(<parametri>) {
+    if (counter > 1)
+        console.log(`The name ${name} appears ${counter} times.`)
+    name = firstNames[index];
+    counter = 1;
+}
+
 let firstNameCount = []
 
 if (firstNames.length >= 1) {
@@ -16,10 +23,7 @@ if (firstNames.length >= 1) {
     for (let index = 1; index <= firstNames.length; index++) {
         if (firstNames[index] === firstNames[index - 1]) counter++;
         else {
-            if (counter > 1)
-                console.log(`The name ${name} appears ${counter} times.`)
-            name = firstNames[index];
-            counter = 1;
+            
         }
     }
 } else {

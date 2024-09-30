@@ -9,7 +9,10 @@ function loadUsers() {
     let underage = 0;
 
     for (const user of usersArray) {
-        console.log(`\nUtente caricato: ${user.firstName} ${user.lastName} nato il ${user.birthDate}`);
+        const {firstName, lastName, birthDate} = user;
+
+        console.log(`\nUtente caricato: ${firstName} ${lastName} nato il ${birthDate}`);
+        document.getElementById("content-div").innerHtml += `<tr><td>${firstName}</td><td>${lastName}</td><td>${birthDate}</td></tr>`;
         const {age} = user;
         if(age < 18) {
             console.log("L'utente è minorenne");
